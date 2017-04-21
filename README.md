@@ -1,6 +1,6 @@
 # lambdaHelloWorld
 
-<h1>This is an simple Hello World Alexa/Lambda example provided in German language.</h1>
+<h2>This is an simple Hello World Alexa/Lambda example provided in German language.</h2>
 
 <b>SetUp:</b></br>
 1.) Use Maven Build to create the "lambdaHelloWorld-1.0-SNAPSHOT-shaded" jar file.</br>
