@@ -12,5 +12,5 @@
 5.) Link the Alexa Skill with your lamdba function.</br>
 
 <b>Use Alexa</b></br>
-Speak with Alexa: "Alexa, sage <insert Alexa SKillname here> Ich möchte ein Spiel spielen."</br>
+Speak with Alexa: "Alexa, sage 'insert Alexa SKillname here' Ich möchte ein Spiel spielen."</br>
 response of Alexa "Zur Zeit kann ich mit dir noch kein Spiel spielen. Aber ich arbeite daran. Bisher unterstüze ich nur Hallo Welt. Also sage Hallo Welt."
