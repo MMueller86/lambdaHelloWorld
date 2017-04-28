@@ -1,7 +1,13 @@
 {
   "intents": [
     {
-      "intent": "HelloWorldIntent"
+      "intent": "HelloWorldIntent",
+      "slots": [
+        {
+          "name": "language",
+          "type": "LIST_OF_Languages"
+        }
+      ]
     },
     {
       "intent": "StartIntent"

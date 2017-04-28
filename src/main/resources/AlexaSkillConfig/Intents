@@ -1,4 +1,8 @@
-HelloWorldIntent Hallo Welt
+HelloWorldIntent Was heisst Hallo Welt in {language}
+HelloWorldIntent Was bedeutet Hallo Welt in {language}
+HelloWorldIntent Sag Hallo Welt in {language}
+HelloWorldIntent Übersetze Hallo Welt in {language}
+HelloWorldIntent Übersetze Hallo Welt nach {language}
 StartIntent starten
 StartIntent starte
 StartIntent beginne
