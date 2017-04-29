@@ -5,7 +5,3 @@ CREATE TABLE "TEST"."HelloWorld"
     "Language" varchar(255) NOT NULL,
     "HelloWorld" varchar(255) NOT NULL
 );
-
-
-
-

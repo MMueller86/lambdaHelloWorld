@@ -3,6 +3,9 @@ package helloWorld.dao;
 
 import helloWorld.constants.SupportedLanguagesEnum;
 import helloWorld.entity.LanguageEntity;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.support.JdbcDaoSupport;
 
@@ -15,6 +18,8 @@ import java.util.List;
  */
 public class LanguageDAO extends JdbcDaoSupport implements ILanguageDAO {
 
+    private static final Logger log = LoggerFactory.getLogger(LanguageDAO.class);
+
     @Override
     public List<LanguageEntity> listLanguages() {
         final String sql = "SELECT \"ID\", \"Language\", \"HelloWorld\" FROM \"TEST\".\"HelloWorld\"";
@@ -24,7 +29,14 @@ public class LanguageDAO extends JdbcDaoSupport implements ILanguageDAO {
     @Override
     public LanguageEntity getLanguage(final SupportedLanguagesEnum language) {
         final String sql = "SELECT * FROM \"TEST\".\"HelloWorld\" WHERE \"Language\" = ? ";
-        return getJdbcTemplate().queryForObject(sql, new LanguageRowMapper(), language.toString());
+        final LanguageEntity result;
+        try {
+            result = getJdbcTemplate().queryForObject(sql, new LanguageRowMapper(), language.toString());
+        } catch (final EmptyResultDataAccessException e) {
+            log.error("No result for: " + sql + " with param = " + language.toString());
+            throw new IllegalArgumentException(e);
+        }
+        return result;
     }
 
     private class LanguageRowMapper implements RowMapper<LanguageEntity> {
