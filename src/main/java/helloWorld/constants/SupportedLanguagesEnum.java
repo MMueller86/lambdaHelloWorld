@@ -17,7 +17,7 @@ public enum SupportedLanguagesEnum {
 
     SupportedLanguagesEnum(final String text) {
         this.text = text;
-        Holder.CODE_MAP.put(text, this);
+        Holder.CODE_MAP.put(text.toUpperCase(), this);
     }
 
     /**
@@ -28,7 +28,7 @@ public enum SupportedLanguagesEnum {
      * @throws IllegalArgumentException if constant not supported by the {@link SupportedLanguagesEnum}
      */
     public static SupportedLanguagesEnum convertFromString(final String constant) {
-        final SupportedLanguagesEnum constantEnum = Holder.CODE_MAP.get(constant);
+        final SupportedLanguagesEnum constantEnum = Holder.CODE_MAP.get(constant.toUpperCase());
         if (null == constantEnum) {
             throw new IllegalArgumentException("String " + constant + "not supported in Enum "
                     + SupportedLanguagesEnum.class.getName());

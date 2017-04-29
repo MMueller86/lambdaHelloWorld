@@ -17,7 +17,7 @@ public enum IntentsEnum {
 
     IntentsEnum(final String constant) {
         this.text = constant;
-        IntentsEnum.Holder.INTENT_MAP.put(constant, this);
+        IntentsEnum.Holder.INTENT_MAP.put(constant.toUpperCase(), this);
     }
 
     /**
@@ -28,7 +28,7 @@ public enum IntentsEnum {
      * @throws IllegalArgumentException if constant not supported by the {@link IntentsEnum}
      */
     public static IntentsEnum convertFromString(final String constant) {
-        final IntentsEnum constantEnum = IntentsEnum.Holder.INTENT_MAP.get(constant);
+        final IntentsEnum constantEnum = IntentsEnum.Holder.INTENT_MAP.get(constant.toUpperCase());
         if (null == constantEnum) {
             throw new IllegalArgumentException("String " + constant + "not supported in Enum "
                     + IntentsEnum.class.getName());
