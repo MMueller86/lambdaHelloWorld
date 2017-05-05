@@ -1,3 +1,0 @@
-DATABASE_URL = "jdbc:postgresql://gamecard.cnndwh68n62f.us-east-1.rds.amazonaws.com:5432/GameCard";
-DB_USER_NAME = "mmueller86";
-DB_PASSWORD = "Eds56tgz";
