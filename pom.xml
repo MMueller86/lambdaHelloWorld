@@ -128,10 +128,10 @@
     <build>
         <resources>
             <resource>
-                <directory>src/test/resources/sqlScripts</directory>
+                <directory>src/test/resources</directory>
             </resource>
             <resource>
-                <directory>src/test/resources</directory>
+                <directory>src/test/resources/sqlScripts</directory>
             </resource>
         </resources>
         <plugins>
