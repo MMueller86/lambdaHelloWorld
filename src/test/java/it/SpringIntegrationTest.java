@@ -25,7 +25,6 @@ public class SpringIntegrationTest {
         sut = new HelloWorldSpeechlet("spring_test.xml");
     }
     @Test
-    //@Sql("classpath:insertLanguages.sql")
     public void HelloWorldSpeechletIntegration_HelloWorld_English() throws SpeechletException {
         final IntentRequest request = AlexaTestObjectUtil.getIntentRequest(IntentsEnum.HELLO_WORLD, SupportedLanguagesEnum.ENGLISH);
         final Session session = AlexaTestObjectUtil.getSession();
@@ -35,7 +34,6 @@ public class SpringIntegrationTest {
     }
 
     @Test
-    //@Sql("classpath:insertLanguages.sql")
     public void HelloWorldSpeechletIntegration_HelloWorld_German() throws SpeechletException {
         final IntentRequest request = AlexaTestObjectUtil.getIntentRequest(IntentsEnum.HELLO_WORLD, SupportedLanguagesEnum.GERMAN);
         final Session session = AlexaTestObjectUtil.getSession();
