@@ -22,7 +22,7 @@ public class SpringIntegrationTest {
 
     @BeforeClass
     public static void setUp() {
-        sut = new HelloWorldSpeechlet("spring_test.xml");
+        sut = new HelloWorldSpeechlet("classpath:spring_test.xml");
     }
     @Test
     public void HelloWorldSpeechletIntegration_HelloWorld_English() throws SpeechletException {
