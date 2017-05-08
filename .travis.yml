@@ -7,7 +7,7 @@ deploy:
   function_name: alexaHelloWolrd
   region: us-east-1
   role: arn:aws:iam::391508872617:role/lambda_basic_execution
-  runtime: Java 8
+  runtime: java8
   handler_name: alexa.requestStreamHandler.HelloWorldSpeechletRequestStreamHandler
   access_key_id: AKIAJVHAVDNVK6G5YA4A
   secret_access_key:
