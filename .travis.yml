@@ -2,3 +2,13 @@ language: java
 jdk: oraclejdk8
 sudo: false
 script: mvn package
+deploy:
+  provider: lambda
+  function_name: alexaHelloWolrd
+  region: us-east-1
+  role: arn:aws:iam::391508872617:role/lambda_basic_execution
+  runtime: Java 8
+  handler_name: alexa.requestStreamHandler.HelloWorldSpeechletRequestStreamHandler
+  access_key_id: AKIAJVHAVDNVK6G5YA4A
+  secret_access_key:
+    secure: OgUjthxpCqLcYtcgavB7JmkFXB3mH9QZfVdmc2R/8ohjdwyKa2OZL89B9KcR3Af8CBCEsyQM5jb6fkgX9romQ2a7JkVGKmJcj03ZdhmkYNES0RPHtoVfBR8bcZZUz7koGxlfAvrt3QEiE/MH10gOV7+JTafxdtrAbuRfRceZBBsFNdplXSwufJAbUyrc970NfiJMkqXVGwQ6ouxXBpYnHE3Zf7OHVvxSO8BTmh932wcdR1JCJ9R2Dhe3sxgHcLNgdg3OzDs2ekvP4DWvwMzqAgVUkKoBsD5IP5ncJC6Nt8EUhaSsPPT0QJxobBv+h7025x0zNiJULQkVdmbqGApxpwo9gFlHfBu8R11CqHRZP+n44JNNeO0T0QYX6ExxF4T78xPDQu/BfYuK7frftWBOiHaKxFEjHaz75VqbathCUZx7pJO3iZ2bAkbWVt0lYVJOgb12VsCsrI4ztMjmCIqZlkoGCISPjj1bmGMBrO1K+RDSO8ZGVYekYMKh1jfTuQGdWkCEfCnXQwLtLdQZ/mo537UAkwhmr9gE9X205hTTKau32/dJHWt1qzScssI6aC89IYWjJRwmk6gCQ0DMAUo12y2wh+mB2HxaPrQKrB3ITnWI63Xesp4gdU8+KHjR7rzPxSvTe2YEefN10HvYyX3xCdkaf5tnBY7Fw/L3DC05SwM=
