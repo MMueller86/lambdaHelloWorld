@@ -5,6 +5,7 @@ script: mvn package
 deploy:
   provider: lambda
   function_name: alexaHelloWolrd
+  skip_cleanup: true
   region: us-east-1
   role: arn:aws:iam::391508872617:role/lambda_basic_execution
   runtime: java8
