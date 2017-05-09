@@ -4,6 +4,7 @@ sudo: false
 script: mvn package
 
 deploy:
+  skip_cleanup: true
   provider: s3
   bucket: gamecard
   region: us-east-1
