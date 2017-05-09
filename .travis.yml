@@ -19,3 +19,4 @@ addons:
 script:
   # other script steps might be done before running the actual SonarQube analysis
   - sonar-scanner
+  - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar
