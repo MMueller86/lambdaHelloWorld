@@ -8,7 +8,7 @@ public class LanguageEntity {
 
     private Integer id;
     private String language;
-    private String HelloWorld;
+    private String helloWorld;
 
     public Integer getId() {
         return id;
@@ -27,11 +27,11 @@ public class LanguageEntity {
     }
 
     public String getHelloWorld() {
-        return HelloWorld;
+        return helloWorld;
     }
 
     public void setHelloWorld(final String helloWorld) {
-        HelloWorld = helloWorld;
+        this.helloWorld = helloWorld;
     }
 
     @Override
@@ -48,7 +48,7 @@ public class LanguageEntity {
     public String toString() {
         return "LanguageEntity{" +
                 "language='" + language + '\'' +
-                ", HelloWorld='" + HelloWorld + '\'' +
+                ", HelloWorld='" + helloWorld + '\'' +
                 '}';
     }
 
