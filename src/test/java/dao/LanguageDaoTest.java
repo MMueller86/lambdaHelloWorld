@@ -1,8 +1,8 @@
 package dao;
 
-import helloWorld.constants.SupportedLanguagesEnum;
-import helloWorld.dao.ILanguageDAO;
-import helloWorld.entity.LanguageEntity;
+import helloworld.constants.SupportedLanguagesEnum;
+import helloworld.dao.ILanguageDAO;
+import helloworld.entity.LanguageEntity;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

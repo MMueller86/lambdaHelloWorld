@@ -1,4 +1,4 @@
-package helloWorld.constants;
+package helloworld.constants;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -17,7 +17,7 @@ public enum SupportedLanguagesEnum {
 
     SupportedLanguagesEnum(final String text) {
         this.text = text;
-        Holder.CODE_MAP.put(text.toUpperCase(), this);
+        Holder.codeMap.put(text.toUpperCase(), this);
     }
 
     /**
@@ -28,7 +28,7 @@ public enum SupportedLanguagesEnum {
      * @throws IllegalArgumentException if constant not supported by the {@link SupportedLanguagesEnum}
      */
     public static SupportedLanguagesEnum convertFromString(final String constant) {
-        final SupportedLanguagesEnum constantEnum = Holder.CODE_MAP.get(constant.toUpperCase());
+        final SupportedLanguagesEnum constantEnum = Holder.codeMap.get(constant.toUpperCase());
         if (null == constantEnum) {
             throw new IllegalArgumentException("String " + constant + "not supported in Enum "
                     + SupportedLanguagesEnum.class.getName());
@@ -42,6 +42,11 @@ public enum SupportedLanguagesEnum {
     }
 
     private static class Holder {
-        static Map<String, SupportedLanguagesEnum> CODE_MAP = new HashMap<>();
+
+        static Map<String, SupportedLanguagesEnum> codeMap = new HashMap<>();
+
+        private Holder() {
+            throw new IllegalArgumentException("not supported");
+        }
     }
 }

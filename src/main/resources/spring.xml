@@ -6,14 +6,14 @@
                            http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
                            http://www.springframework.org/schema/context
                            http://www.springframework.org/schema/context/spring-context.xsd">
-    <context:component-scan base-package="helloWorld.service"/>
-    <context:component-scan base-package="helloWorld.dao"/>
+    <context:component-scan base-package="helloworld.service"/>
+    <context:component-scan base-package="helloworld.dao"/>
 
     <bean id="dataSource"
-          class="helloWorld.util.AwsConfiguredDataSource">
+          class="helloworld.util.AwsConfiguredDataSource">
     </bean>
 
-    <bean id="languageDao" class="helloWorld.dao.LanguageDAO">
+    <bean id="languageDao" class="helloworld.dao.LanguageDAO">
         <property name="dataSource" ref="dataSource"></property>
     </bean>
 

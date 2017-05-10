@@ -4,9 +4,9 @@ import com.amazon.speech.slu.Intent;
 import com.amazon.speech.slu.Slot;
 import com.amazon.speech.speechlet.IntentRequest;
 import com.amazon.speech.speechlet.Session;
-import helloWorld.constants.IntentsEnum;
-import helloWorld.constants.SlotEnum;
-import helloWorld.constants.SupportedLanguagesEnum;
+import helloworld.constants.IntentsEnum;
+import helloworld.constants.SlotEnum;
+import helloworld.constants.SupportedLanguagesEnum;
 
 import java.util.HashMap;
 import java.util.Map;

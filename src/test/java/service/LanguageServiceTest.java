@@ -1,9 +1,9 @@
 package service;
 
-import helloWorld.constants.SupportedLanguagesEnum;
-import helloWorld.dao.ILanguageDAO;
-import helloWorld.entity.LanguageEntity;
-import helloWorld.service.LanguageService;
+import helloworld.constants.SupportedLanguagesEnum;
+import helloworld.dao.ILanguageDAO;
+import helloworld.entity.LanguageEntity;
+import helloworld.service.LanguageService;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;

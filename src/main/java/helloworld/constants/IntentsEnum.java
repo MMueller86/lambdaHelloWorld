@@ -1,4 +1,4 @@
-package helloWorld.constants;
+package helloworld.constants;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -17,7 +17,7 @@ public enum IntentsEnum {
 
     IntentsEnum(final String constant) {
         this.text = constant;
-        IntentsEnum.Holder.INTENT_MAP.put(constant.toUpperCase(), this);
+        IntentsEnum.Holder.intentMap.put(constant.toUpperCase(), this);
     }
 
     /**
@@ -28,7 +28,7 @@ public enum IntentsEnum {
      * @throws IllegalArgumentException if constant not supported by the {@link IntentsEnum}
      */
     public static IntentsEnum convertFromString(final String constant) {
-        final IntentsEnum constantEnum = IntentsEnum.Holder.INTENT_MAP.get(constant.toUpperCase());
+        final IntentsEnum constantEnum = IntentsEnum.Holder.intentMap.get(constant.toUpperCase());
         if (null == constantEnum) {
             throw new IllegalArgumentException("String " + constant + "not supported in Enum "
                     + IntentsEnum.class.getName());
@@ -42,6 +42,11 @@ public enum IntentsEnum {
     }
 
     private static class Holder {
-        static Map<String, IntentsEnum> INTENT_MAP = new HashMap<>();
+
+        static Map<String, IntentsEnum> intentMap = new HashMap<>();
+
+        private Holder() {
+            throw new IllegalArgumentException("not supported");
+        }
     }
 }

@@ -1,4 +1,4 @@
-package helloWorld.entity;
+package helloworld.entity;
 
 /**
  * Created by mimo on 26.04.2017.

@@ -1,7 +1,7 @@
-package helloWorld.dao;
+package helloworld.dao;
 
-import helloWorld.constants.SupportedLanguagesEnum;
-import helloWorld.entity.LanguageEntity;
+import helloworld.constants.SupportedLanguagesEnum;
+import helloworld.entity.LanguageEntity;
 
 import java.util.List;
 

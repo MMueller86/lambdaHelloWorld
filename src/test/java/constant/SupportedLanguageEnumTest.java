@@ -1,6 +1,6 @@
 package constant;
 
-import helloWorld.constants.SupportedLanguagesEnum;
+import helloworld.constants.SupportedLanguagesEnum;
 import org.junit.Assert;
 import org.junit.Test;
 

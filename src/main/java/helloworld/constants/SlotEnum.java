@@ -1,4 +1,4 @@
-package helloWorld.constants;
+package helloworld.constants;
 
 /**
  * Created by mimo on 27.04.2017.

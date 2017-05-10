@@ -1,4 +1,4 @@
-package helloWorld.util;
+package helloworld.util;
 
 import com.amazonaws.services.kms.AWSKMS;
 import com.amazonaws.services.kms.AWSKMSClientBuilder;
@@ -16,6 +16,9 @@ import java.nio.charset.Charset;
 public class AwsKmsEnvUtil {
     private static final Logger log = LoggerFactory.getLogger(AwsKmsEnvUtil.class);
 
+    private AwsKmsEnvUtil() {
+        throw new IllegalArgumentException("not supported... it is a Util.");
+    }
 
     public static String decryptKey(final String key) {
         log.info("start decryption of " + key);

@@ -1,6 +1,6 @@
 package constant;
 
-import helloWorld.constants.IntentsEnum;
+import helloworld.constants.IntentsEnum;
 import org.junit.Assert;
 import org.junit.Test;
 

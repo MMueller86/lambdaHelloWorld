@@ -5,8 +5,8 @@ import com.amazon.speech.speechlet.IntentRequest;
 import com.amazon.speech.speechlet.Session;
 import com.amazon.speech.speechlet.SpeechletException;
 import com.amazon.speech.ui.PlainTextOutputSpeech;
-import helloWorld.constants.IntentsEnum;
-import helloWorld.constants.SupportedLanguagesEnum;
+import helloworld.constants.IntentsEnum;
+import helloworld.constants.SupportedLanguagesEnum;
 import mock.AlexaTestObjectUtil;
 import org.junit.Assert;
 import org.junit.BeforeClass;
@@ -24,6 +24,7 @@ public class SpringIntegrationTest {
     public static void setUp() {
         sut = new HelloWorldSpeechlet("spring_test.xml");
     }
+
     @Test
     public void HelloWorldSpeechletIntegration_HelloWorld_English() throws SpeechletException {
         final IntentRequest request = AlexaTestObjectUtil.getIntentRequest(IntentsEnum.HELLO_WORLD, SupportedLanguagesEnum.ENGLISH);

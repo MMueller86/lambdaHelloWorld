@@ -1,4 +1,4 @@
-package helloWorld.util;
+package helloworld.util;
 
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 

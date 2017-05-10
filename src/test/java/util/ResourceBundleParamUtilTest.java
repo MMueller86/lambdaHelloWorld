@@ -1,6 +1,6 @@
 package util;
 
-import helloWorld.util.ResourceBundleParamUtil;
+import helloworld.util.ResourceBundleParamUtil;
 import org.junit.Assert;
 import org.junit.Test;
 

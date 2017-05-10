@@ -1,6 +1,6 @@
-package helloWorld.service;
+package helloworld.service;
 
-import helloWorld.constants.SupportedLanguagesEnum;
+import helloworld.constants.SupportedLanguagesEnum;
 
 /**
  * Created by mimo on 26.04.2017.

@@ -1,8 +1,8 @@
-package helloWorld.dao;
+package helloworld.dao;
 
 
-import helloWorld.constants.SupportedLanguagesEnum;
-import helloWorld.entity.LanguageEntity;
+import helloworld.constants.SupportedLanguagesEnum;
+import helloworld.entity.LanguageEntity;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.dao.EmptyResultDataAccessException;

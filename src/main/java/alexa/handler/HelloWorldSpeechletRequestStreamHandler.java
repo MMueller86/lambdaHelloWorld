@@ -1,4 +1,4 @@
-package alexa.requestStreamHandler;
+package alexa.handler;
 
 
 import alexa.speechlet.HelloWorldSpeechlet;
@@ -23,7 +23,7 @@ import java.util.Set;
  *
  */
 public final class HelloWorldSpeechletRequestStreamHandler extends SpeechletRequestStreamHandler {
-    private static final Set<String> supportedApplicationIds = new HashSet<String>();
+    private static final Set<String> supportedApplicationIds = new HashSet<>();
     static {
         /*
          * This Id can be found on https://developer.amazon.com/edw/home.html#/ "Edit" the relevant

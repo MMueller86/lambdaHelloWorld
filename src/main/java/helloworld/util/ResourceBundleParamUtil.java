@@ -1,4 +1,4 @@
-package helloWorld.util;
+package helloworld.util;
 
 import java.text.MessageFormat;
 import java.util.Locale;
@@ -13,6 +13,10 @@ public class ResourceBundleParamUtil {
     // property file is: package/name/messages.properties
     private static final String BUNDLE_NAME = "speech";
     private static final ResourceBundle RESOURCE_BUNDLE = ResourceBundle.getBundle(BUNDLE_NAME, Locale.GERMAN);
+
+    private ResourceBundleParamUtil() {
+        throw new IllegalArgumentException("Not supported it is a Util");
+    }
 
     public static String getString(final String key) {
         try {

@@ -1,8 +1,8 @@
-package helloWorld.service;
+package helloworld.service;
 
-import helloWorld.constants.SupportedLanguagesEnum;
-import helloWorld.dao.ILanguageDAO;
-import helloWorld.entity.LanguageEntity;
+import helloworld.constants.SupportedLanguagesEnum;
+import helloworld.dao.ILanguageDAO;
+import helloworld.entity.LanguageEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -20,15 +20,14 @@ public class LanguageService implements ILanguageService {
     @Override
     public String getSupportedLanguages() {
         final List<LanguageEntity> languageList = languageDao.listLanguages();
-        String result = "";
+        final StringBuilder sb = new StringBuilder();
         for (final Iterator<LanguageEntity> iterator = languageList.iterator(); iterator.hasNext(); ) {
-            String supportedLanguage = iterator.next().getLanguage();
+            sb.append(iterator.next().getLanguage());
             if (iterator.hasNext()) {
-                supportedLanguage += ", ";
+                sb.append(", ");
             }
-            result += supportedLanguage;
         }
-        return result;
+        return sb.toString();
     }
 
 
