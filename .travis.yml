@@ -18,7 +18,7 @@ addons:
 script:
   # other script steps might be done before running the actual SonarQube analysis
   - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar
-  - mvn deploy --settings target/travis/settings.xml
+  - mvn deploy --settings settings.xml
 env:
   global:
   - secure: "YSLPcdaxZOuccgK0xso19S0IJRb4DIavFop2ilJovpMbJPWoPLFSaey0EN1CwaWptJg2uuiOUMGUeOzwS3+tsQiCMwnyK1Ivhp5jahSHuOiPSGf0LSVWjIdg8tT2++oQ+upUYTJOegDy9Y4Wx1c+rwV49prxbG6CUahj0fMbVMZvVzmJCmgRSwPfGtOEmISq9vWAPYMAGFdLl4OZ0BpmR/F8X4PlOQHbKs3QTRA4zePzdjCIw5RhbXryaJfUBuKjegSu7qKqpdtKT/TEVPA2l2IR9IpIYjyNpJGUCsA+zyfN87xaiduNDWlhQnCjbrl/GEVs+nU9rTYTphFTmLwt7juM7b8xruqGBP1FCyluTMbDe95RVsQCod0M/V8q5/QISQaRx3eipIYcjuwVKvqozo+9rZESm6OSvkNKp8zXTKHqHOst9VpVD68O2EoFA+nyIRucsGAjVLEypv2/CpC8XJiOr4BQsfqhuP2DfzGD8njCTJ+oRJ0Axj6lyBEfyHBVFUYC6rD7mbD1q9qsJShQKcBNVW8Jyy5qexcYEl3MAveiacHLC6gtJDegSMuGZAjVQcP5z0BASQ2E5k8ykoZ/SZA0D698YIqURJj2LT2ccGj8S7sP+Q5RgEuQ2dukGaPvgqI57QaLJLiW5tpTFMiwSZOaso3el9rQWccfkdrey0Y="
