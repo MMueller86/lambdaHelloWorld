@@ -11,7 +11,7 @@ import java.util.Set;
  * This class could be the alexa.handler for an AWS Lambda function powering an Alexa Skills Kit
  * experience. To do this, simply set the alexa.handler field in the AWS Lambda console to
  * "HelloWorldSpeechletRequestStreamHandler".
- *
+ * <p>
  * For this to work, you'll also need to build
  * this project using maven shade plugin (fat jar) and upload the resulting jar file to power
  * your function.
@@ -24,8 +24,10 @@ import java.util.Set;
  */
 public final class HelloWorldSpeechletRequestStreamHandler extends SpeechletRequestStreamHandler {
     private static final Set<String> supportedApplicationIds = new HashSet<>();
+
     static {
         /*
+        
          * This Id can be found on https://developer.amazon.com/edw/home.html#/ "Edit" the relevant
          * Alexa Skill and put the relevant Application Ids in this Set.
          */
