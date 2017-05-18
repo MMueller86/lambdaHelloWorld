@@ -10,7 +10,6 @@ import helloworld.constants.IntentsEnum;
 import helloworld.constants.SlotEnum;
 import helloworld.constants.SupportedLanguagesEnum;
 import helloworld.service.ILanguageService;
-import helloworld.service.LanguageService;
 import helloworld.util.ResourceBundleParamUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -44,7 +43,7 @@ public class HelloWorldSpeechlet implements Speechlet {
         log.info("start Spring");
         context = new FileSystemXmlApplicationContext
                 ("classpath:" + springConfigFileName);
-        languageService = (LanguageService) context.getBean("languageService");
+        languageService = context.getBean(ILanguageService.class);
         log.info("spring started");
     }
 

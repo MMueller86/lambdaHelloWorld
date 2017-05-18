@@ -13,6 +13,10 @@ deploy:
 addons:
   sonarqube:
     organization: mmueller86-github
+        branches:
+          - master
+          - sonartypeNexus
+          - SpringData
     token:
       secure: "Pr7pQBRQcY2xQl9K5rJAsl9JNYQtK0tKu8YTj7bhawfE60JhfW06H80RK7zceDfQDJY1StJc1BebE22CL2pDCCFoRRkz99x4Sryl1R8Wal94Vdue4oRAIziLekhnd3hUgEiaATO7I52F7TIWx8BcMp45TobeExxFXlLqfDUJlXIfEJIwB22v571/4lE0e2/b9vJdQkoTG9/nYOGo4JNRM5CSIu1Xop2jkm+uV/5UW4bav8IdlwLvRA6Qns+oI8ZZorW54wqYwd5HxkOkFKSo8d5zojaWZAv2eckq9yo9x6HdrkCXv1dqi5nQMay5KiDcfI4p0fTWzp8AxsPGM/J1pc2nOF/UzICpiiZLxgQ2iwL5HPAraru7ZEYLob1JsQ1e17MXepiwPmRmmENkPrzI/kg9+dcDoe7038bGLGnQ/Q/qpsfJX4+AiW20HU1+uFTP0NkPhGol504zGIewZyOaoZAAH0jRdCdQxXIKXWv2pV2L8p4awnjnEMUjapoIy9K6VFld92KPivmc/tHUSxm18rNQlXXt/6r+wQrEXxNgb6ATmErGEUbI7m0DzqHYXB//5IsLsNNSL88POKYB5JATpPzxdtEmVwOw/vjTtEcq/3QLZkgeKTPV/z1sKvwYgAe9J77pVtX9/EEg63pG4lLBwwNIV5BKDfKHW7YGo3HS4mE="
 script:
