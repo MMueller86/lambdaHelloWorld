@@ -1,13 +1,13 @@
 package service;
 
 import helloworld.constants.SupportedLanguagesEnum;
-import helloworld.dao.ILanguageDAO;
 import helloworld.entity.LanguageEntity;
+import helloworld.repository.LanguageRepository;
 import helloworld.service.LanguageService;
 import org.junit.Assert;
-import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
 
@@ -22,42 +22,37 @@ import static org.mockito.Mockito.when;
 @RunWith(MockitoJUnitRunner.class)
 public class LanguageServiceTest {
 
+    @InjectMocks
+    private final LanguageService sut = new LanguageService();
     @Mock
-    private ILanguageDAO languageDAOMock;
-    private LanguageService sut;
-
-    @Before
-    public void setUp() {
-        sut = new LanguageService();
-        sut.setLanguageDao(languageDAOMock);
-    }
+    private LanguageRepository languageRepository;
 
     @Test
     public void getSupportedLanguages_EmptyList() {
-        when(languageDAOMock.listLanguages()).thenReturn(new ArrayList<LanguageEntity>());
+        when(languageRepository.findAll()).thenReturn(new ArrayList<LanguageEntity>());
         final String result = sut.getSupportedLanguages();
         Assert.assertEquals("", result);
     }
 
     @Test
     public void getSupportedLanguages_OneElement() {
-        when(languageDAOMock.listLanguages()).thenReturn(getMockLanguageList(1));
+        when(languageRepository.findAll()).thenReturn(getMockLanguageList(1));
         final String result = sut.getSupportedLanguages();
-        Assert.assertEquals("language 0", result);
+        Assert.assertEquals("Deutsch", result);
     }
 
     @Test
     public void getSupportedLanguages_TwoElements() {
-        when(languageDAOMock.listLanguages()).thenReturn(getMockLanguageList(2));
+        when(languageRepository.findAll()).thenReturn(getMockLanguageList(2));
         final String result = sut.getSupportedLanguages();
-        Assert.assertEquals("language 0, language 1", result);
+        Assert.assertEquals("Deutsch, Deutsch", result);
     }
 
     @Test
     public void getHelloWorldForLanguage() {
         final LanguageEntity entity = new LanguageEntity();
         entity.setHelloWorld("Hello World");
-        when(languageDAOMock.getLanguage(SupportedLanguagesEnum.ENGLISH)).thenReturn(entity);
+        when(languageRepository.findByLanguage(SupportedLanguagesEnum.ENGLISH)).thenReturn(entity);
         final String result = sut.getHelloWorldForLanguage(SupportedLanguagesEnum.ENGLISH);
         Assert.assertEquals(entity.getHelloWorld(), result);
     }
@@ -67,8 +62,8 @@ public class LanguageServiceTest {
 
         for (int i = 0; i < count; i++) {
             final LanguageEntity entity = new LanguageEntity();
-            entity.setId(i);
-            entity.setLanguage("language " + i);
+            entity.setId(Long.valueOf(i));
+            entity.setLanguage(SupportedLanguagesEnum.GERMAN);
             entity.setHelloWorld("Hallo Welt " + i);
             mockResultList.add(entity);
         }

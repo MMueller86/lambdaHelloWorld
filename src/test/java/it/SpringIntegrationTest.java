@@ -15,7 +15,6 @@ import org.junit.Test;
 /**
  * Created by mimo on 26.04.2017.
  */
-//@ContextConfiguration(locations = {"classpath:spring_test.xml"})
 public class SpringIntegrationTest {
 
     private static HelloWorldSpeechlet sut;

@@ -1,13 +1,15 @@
-package dao;
+package repository;
 
 import helloworld.constants.SupportedLanguagesEnum;
-import helloworld.dao.ILanguageDAO;
 import helloworld.entity.LanguageEntity;
+import helloworld.repository.LanguageRepository;
+import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.jdbc.Sql;
+import org.springframework.test.context.junit4.AbstractTransactionalJUnit4SpringContextTests;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import java.util.List;
@@ -16,28 +18,29 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
 /**
- * Created by mimo on 24.04.2017.
+ * Created by mimo on 17.05.2017.
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = {"classpath:spring_test.xml"})
-public class LanguageDaoTest {
-    @Autowired
-    ILanguageDAO sut;
+public class LanguageRepositoryTest extends AbstractTransactionalJUnit4SpringContextTests {
 
+    @Autowired
+    LanguageRepository sut;
 
     @Test
     @Sql("classpath:insertLanguages.sql")
-    public void ListLanguages() {
-        final List<LanguageEntity> languageList = sut.listLanguages();
-        assertNotNull(languageList);
-        assertEquals(2, languageList.size());
+    public void getLanguage2() {
+        final List<LanguageEntity> resultList = sut.findAll();
+        Assert.assertEquals(2, resultList.size());
     }
 
     @Test
     @Sql("classpath:insertLanguages.sql")
     public void getLanguage() {
-        final LanguageEntity language = sut.getLanguage(SupportedLanguagesEnum.ENGLISH);
+        final LanguageEntity language = sut.findByLanguage(SupportedLanguagesEnum.ENGLISH);
         assertNotNull(language);
-        assertEquals(SupportedLanguagesEnum.ENGLISH.toString(), language.getLanguage());
+        assertEquals(SupportedLanguagesEnum.ENGLISH, language.getLanguage());
+        assertEquals(Long.valueOf(2l), language.getId());
+        assertEquals("Hello World", language.getHelloWorld());
     }
 }

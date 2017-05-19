@@ -1,3 +1,3 @@
-DELETE FROM "TEST"."HelloWorld";
-INSERT INTO "TEST"."HelloWorld" VALUES (3,'Deutsch','Hallo Welt');
-INSERT INTO "TEST"."HelloWorld" VALUES (4,'Englisch','Hello World');
+DELETE FROM test.helloworld;
+INSERT INTO test.helloworld VALUES (1,'GERMAN','Hallo Welt');
+INSERT INTO test.helloworld VALUES (2,'ENGLISH','Hello World');
