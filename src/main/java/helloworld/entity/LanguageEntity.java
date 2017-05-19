@@ -1,28 +1,43 @@
 package helloworld.entity;
 
+import helloworld.constants.SupportedLanguagesEnum;
+
+import javax.persistence.*;
+
 /**
  * Created by mimo on 26.04.2017.
  */
 
+@Entity
+@Table(name = "helloworld")
 public class LanguageEntity {
 
-    private Integer id;
-    private String language;
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "id_generator")
+    @SequenceGenerator(allocationSize = 10, name = "id_generator", sequenceName = "serial")
+    @Column(name = "ID")
+    private Long id;
+
+    @Column(name = "Language")
+    @Enumerated(EnumType.STRING)
+    private SupportedLanguagesEnum language;
+
+    @Column(name = "HelloWorld")
     private String helloWorld;
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(final Integer id) {
+    public void setId(final Long id) {
         this.id = id;
     }
 
-    public String getLanguage() {
+    public SupportedLanguagesEnum getLanguage() {
         return language;
     }
 
-    public void setLanguage(final String language) {
+    public void setLanguage(final SupportedLanguagesEnum language) {
         this.language = language;
     }
 
