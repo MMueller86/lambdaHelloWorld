@@ -30,7 +30,7 @@ public class SingleFieldValidator implements ConstraintValidator<SingleFieldVali
             valid = Boolean.TRUE;
         } else {
             final int rest = value % minValue;
-            if (rest == 0 && value <= maxValue && value >= minValue) {
+            if (rest == 0 && maxValue >= value) {
                 valid = true;
             }
         }
