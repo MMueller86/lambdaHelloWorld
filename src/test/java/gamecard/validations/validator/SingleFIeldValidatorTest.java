@@ -41,6 +41,7 @@ public class SingleFIeldValidatorTest {
         Assert.assertFalse(validator.isValid(1, null));
         Assert.assertFalse(validator.isValid(19, null));
         Assert.assertFalse(validator.isValid(4, null));
+        Assert.assertFalse(validator.isValid(21, null));
         Assert.assertTrue(validator.isValid(0, null));
         Assert.assertTrue(validator.isValid(null, null));
         Assert.assertTrue(validator.isValid(3, null));
@@ -49,7 +50,6 @@ public class SingleFIeldValidatorTest {
         Assert.assertTrue(validator.isValid(12, null));
         Assert.assertTrue(validator.isValid(15, null));
         Assert.assertTrue(validator.isValid(18, null));
-        Assert.assertTrue(validator.isValid(21, null));
     }
 
     @Test
