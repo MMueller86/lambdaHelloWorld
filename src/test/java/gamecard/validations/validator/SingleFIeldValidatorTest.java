@@ -49,6 +49,7 @@ public class SingleFIeldValidatorTest {
         Assert.assertTrue(validator.isValid(12, null));
         Assert.assertTrue(validator.isValid(15, null));
         Assert.assertTrue(validator.isValid(18, null));
+        Assert.assertTrue(validator.isValid(21, null));
     }
 
     @Test
@@ -56,6 +57,13 @@ public class SingleFIeldValidatorTest {
         final SingleFieldValidator validator = new SingleFieldValidator();
         thrown.expect(IllegalArgumentException.class);
         validator.initialize(createAnnotation(7));
+    }
+
+    @Test
+    public void isValid_IllegalArgumentExceptionZero() {
+        final SingleFieldValidator validator = new SingleFieldValidator();
+        thrown.expect(IllegalArgumentException.class);
+        validator.initialize(createAnnotation(0));
     }
 
 
