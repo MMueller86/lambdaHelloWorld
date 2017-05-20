@@ -8,7 +8,7 @@ import javax.validation.ConstraintValidatorContext;
 /**
  * Created by mimo on 20.05.2017.
  */
-public class SingleField_validator implements ConstraintValidator<SingleFieldValid, Integer> {
+public class SingleFieldValidator implements ConstraintValidator<SingleFieldValid, Integer> {
     int minValue;
     int maxValue;
 
