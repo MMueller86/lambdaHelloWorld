@@ -19,11 +19,13 @@ public class SingleFIeldValidatorTest {
 
     @Test
     public void isValidDigit2() {
-        final SingleField_validator validator = new SingleField_validator();
+        final SingleFieldValidator validator = new SingleFieldValidator();
         validator.initialize(createAnnotation(2));
         Assert.assertFalse(validator.isValid(1, null));
         Assert.assertFalse(validator.isValid(13, null));
         Assert.assertFalse(validator.isValid(3, null));
+        Assert.assertTrue(validator.isValid(0, null));
+        Assert.assertTrue(validator.isValid(null, null));
         Assert.assertTrue(validator.isValid(2, null));
         Assert.assertTrue(validator.isValid(4, null));
         Assert.assertTrue(validator.isValid(6, null));
@@ -34,11 +36,13 @@ public class SingleFIeldValidatorTest {
 
     @Test
     public void isValidDigit3() {
-        final SingleField_validator validator = new SingleField_validator();
+        final SingleFieldValidator validator = new SingleFieldValidator();
         validator.initialize(createAnnotation(3));
         Assert.assertFalse(validator.isValid(1, null));
         Assert.assertFalse(validator.isValid(19, null));
         Assert.assertFalse(validator.isValid(4, null));
+        Assert.assertTrue(validator.isValid(0, null));
+        Assert.assertTrue(validator.isValid(null, null));
         Assert.assertTrue(validator.isValid(3, null));
         Assert.assertTrue(validator.isValid(6, null));
         Assert.assertTrue(validator.isValid(9, null));
@@ -49,7 +53,7 @@ public class SingleFIeldValidatorTest {
 
     @Test
     public void isValid_IllegalArgumentException() {
-        final SingleField_validator validator = new SingleField_validator();
+        final SingleFieldValidator validator = new SingleFieldValidator();
         thrown.expect(IllegalArgumentException.class);
         validator.initialize(createAnnotation(7));
     }
