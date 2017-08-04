@@ -8,6 +8,6 @@
     <import resource="classpath:spring.xml"/>
 
     <bean id="dynamoDB" class="helloworld.dynamo.DynamaoDbFactoroy">
-        <property name="localDynamoDb" value="http://192.168.99.100:8000"/>
+        <property name="localDynamoDb" value="localhost:8000"/>
     </bean>
 </beans>
