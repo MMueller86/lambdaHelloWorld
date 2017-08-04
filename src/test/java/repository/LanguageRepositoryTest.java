@@ -1,46 +1,62 @@
 package repository;
 
+import com.amazonaws.services.dynamodbv2.AmazonDynamoDB;
+import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapper;
+import com.amazonaws.services.dynamodbv2.document.Expected;
+import com.amazonaws.services.dynamodbv2.model.*;
+import com.github.klousiaj.junit.DockerRule;
+import dynamo.DynamoTestSupport;
 import helloworld.constants.SupportedLanguagesEnum;
 import helloworld.entity.LanguageEntity;
 import helloworld.repository.LanguageRepository;
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.*;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.jdbc.Sql;
-import org.springframework.test.context.junit4.AbstractTransactionalJUnit4SpringContextTests;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
 
 /**
  * Created by mimo on 17.05.2017.
  */
-@RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = {"classpath:spring_test.xml"})
-public class LanguageRepositoryTest extends AbstractTransactionalJUnit4SpringContextTests {
+public class LanguageRepositoryTest extends DynamoTestSupport {
 
     @Autowired
-    LanguageRepository sut;
+    private LanguageRepository languageRepository;
+
+    @Autowired
+    private AmazonDynamoDB ddb;
+
+    @ClassRule
+    public static DockerRule rabbitRule =
+            DockerRule.builder()
+                    .image("ryanratcliff/dynamodb")
+                    .ports("5672", ":32779", "8000:8000")
+                    .build();
 
     @Test
-    @Sql("classpath:insertLanguages.sql")
-    public void getLanguage2() {
-        final List<LanguageEntity> resultList = sut.findAll();
-        Assert.assertEquals(2, resultList.size());
+    public void findByLanguage_Success() {
+        LanguageEntity entity = languageRepository.findByLanguage(SupportedLanguagesEnum.ENGLISH);
+        Assert.assertNotNull(entity);
+        Assert.assertEquals("Hello World", entity.getHelloWorld());
+        Assert.assertEquals(SupportedLanguagesEnum.ENGLISH.toString(),entity.getLanguage());
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void findByLanguage_NoRecord() {
+        LanguageEntity entity = languageRepository.findByLanguage(SupportedLanguagesEnum.UNKNOWN);
     }
 
     @Test
-    @Sql("classpath:insertLanguages.sql")
-    public void getLanguage() {
-        final LanguageEntity language = sut.findByLanguage(SupportedLanguagesEnum.ENGLISH);
-        assertNotNull(language);
-        assertEquals(SupportedLanguagesEnum.ENGLISH, language.getLanguage());
-        assertEquals(Long.valueOf(2l), language.getId());
-        assertEquals("Hello World", language.getHelloWorld());
+    public void listAllLanguages() {
+        List<LanguageEntity> languageEntityList = languageRepository.listAll();
+        Assert.assertNotNull(languageEntityList);
+        Assert.assertEquals(savedIds.size(), languageEntityList.size());
     }
 }

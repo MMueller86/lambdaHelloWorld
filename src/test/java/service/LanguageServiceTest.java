@@ -29,21 +29,21 @@ public class LanguageServiceTest {
 
     @Test
     public void getSupportedLanguages_EmptyList() {
-        when(languageRepository.findAll()).thenReturn(new ArrayList<LanguageEntity>());
+        when(languageRepository.listAll()).thenReturn(new ArrayList<LanguageEntity>());
         final String result = sut.getSupportedLanguages();
         Assert.assertEquals("", result);
     }
 
     @Test
     public void getSupportedLanguages_OneElement() {
-        when(languageRepository.findAll()).thenReturn(getMockLanguageList(1));
+        when(languageRepository.listAll()).thenReturn(getMockLanguageList(1));
         final String result = sut.getSupportedLanguages();
         Assert.assertEquals("Deutsch", result);
     }
 
     @Test
     public void getSupportedLanguages_TwoElements() {
-        when(languageRepository.findAll()).thenReturn(getMockLanguageList(2));
+        when(languageRepository.listAll()).thenReturn(getMockLanguageList(2));
         final String result = sut.getSupportedLanguages();
         Assert.assertEquals("Deutsch, Deutsch", result);
     }
@@ -62,8 +62,8 @@ public class LanguageServiceTest {
 
         for (int i = 0; i < count; i++) {
             final LanguageEntity entity = new LanguageEntity();
-            entity.setId(Long.valueOf(i));
-            entity.setLanguage(SupportedLanguagesEnum.GERMAN);
+            entity.setId(String.valueOf(i));
+            entity.setLanguage(SupportedLanguagesEnum.GERMAN.toString());
             entity.setHelloWorld("Hallo Welt " + i);
             mockResultList.add(entity);
         }
