@@ -1,9 +1,8 @@
-package service;
+package helloworld.service;
 
 import helloworld.constants.SupportedLanguagesEnum;
 import helloworld.entity.LanguageEntity;
 import helloworld.repository.LanguageRepository;
-import helloworld.service.LanguageService;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;

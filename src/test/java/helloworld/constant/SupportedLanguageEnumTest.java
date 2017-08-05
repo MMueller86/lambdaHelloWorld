@@ -1,4 +1,4 @@
-package constant;
+package helloworld.constant;
 
 import helloworld.constants.SupportedLanguagesEnum;
 import org.junit.Assert;

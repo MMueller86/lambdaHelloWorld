@@ -1,4 +1,4 @@
-package dynamo;
+package helloworld.dynamo;
 
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDB;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapper;
@@ -22,7 +22,7 @@ import java.util.List;
 @ContextConfiguration(locations = {"classpath:spring_test.xml"})
 public abstract class DynamoTestSupport {
 
-    // Amount of saved Items durin the initDB.
+    // Amount of saved Items during the initDB.
     protected List<String> savedIds = new ArrayList<>();
 
     @Autowired

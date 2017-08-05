@@ -1,26 +1,16 @@
-package repository;
+package helloworld.repository;
 
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDB;
-import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapper;
-import com.amazonaws.services.dynamodbv2.document.Expected;
-import com.amazonaws.services.dynamodbv2.model.*;
 import com.github.klousiaj.junit.DockerRule;
-import dynamo.DynamoTestSupport;
 import helloworld.constants.SupportedLanguagesEnum;
+import helloworld.dynamo.DynamoTestSupport;
 import helloworld.entity.LanguageEntity;
-import helloworld.repository.LanguageRepository;
-import org.junit.*;
-import org.junit.runner.RunWith;
+import org.junit.Assert;
+import org.junit.ClassRule;
+import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import java.util.ArrayList;
 import java.util.List;
-
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertTrue;
 
 /**
  * Created by mimo on 17.05.2017.
