@@ -1,6 +1,8 @@
 package helloworld.constants;
 
 /**
+ * Enum containing all supported slots
+ *
  * Created by mimo on 27.04.2017.
  */
 public enum SlotEnum {

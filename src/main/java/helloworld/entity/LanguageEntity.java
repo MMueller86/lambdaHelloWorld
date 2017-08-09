@@ -7,6 +7,10 @@ import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBTable;
 
 
 /**
+ * Entity to containing the Hello Wold information.
+ * Due to the used annotations this entity can be used by the
+ * {@link com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapper}.
+ *
  * Created by mimo on 26.04.2017.
  */
 

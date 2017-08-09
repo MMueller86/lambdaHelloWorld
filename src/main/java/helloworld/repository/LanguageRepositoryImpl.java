@@ -15,6 +15,9 @@ import java.util.List;
 import java.util.Map;
 
 /**
+ * Implementation of {@link LanguageRepository}.
+ * Implementation is dealing the Dynamo DB.
+ *
  * Created by mimo on 17.05.2017.
  */
 @Repository
@@ -43,7 +46,6 @@ public class LanguageRepositoryImpl implements LanguageRepository {
     @Override
     public List<LanguageEntity> listAll() {
         DynamoDBMapper mapper = new DynamoDBMapper(ddb);
-        List<LanguageEntity> languageList = mapper.scan(LanguageEntity.class, new DynamoDBScanExpression());
-        return languageList;
+        return mapper.scan(LanguageEntity.class, new DynamoDBScanExpression());
     }
 }

@@ -15,9 +15,7 @@ import java.util.Set;
  * For this to work, you'll also need to build
  * this project using maven shade plugin (fat jar) and upload the resulting jar file to power
  * your function.
- */
-
-/**
+ *
  * Implementation of the abstract class {@link SpeechletRequestStreamHandler}.
  * Setting the {@link HelloWorldSpeechlet} into the Handler in the constructor.
  *

@@ -10,6 +10,8 @@ import java.util.Iterator;
 import java.util.List;
 
 /**
+ * Implementation of {@link ILanguageService}.
+ *
  * Created by mimo on 26.04.2017.
  */
 @Service
