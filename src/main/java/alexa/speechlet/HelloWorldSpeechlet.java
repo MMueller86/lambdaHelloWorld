@@ -19,8 +19,8 @@ import org.springframework.context.support.FileSystemXmlApplicationContext;
 
 /**
  * Contains all methods to handle the Alexa communication.
- * This class is used to get the events (intens) from Alexa and call the
- * Alexa independent backend. The backend result is transferred to an alexa understandable response.
+ * This class is used to get the events (intents) from Alexa and call the
+ * Alexa independent backend. The backend result is transferred to an alexa understandable {@link Speechlet}.
  */
 public class HelloWorldSpeechlet implements Speechlet {
     private static final Logger log = LoggerFactory.getLogger(HelloWorldSpeechlet.class);
@@ -29,7 +29,8 @@ public class HelloWorldSpeechlet implements Speechlet {
     protected ApplicationContext context;
 
     /**
-     * By using this constructor you have to initialize the Spring Context as well as the needed services on your own!
+     * By using this constructor you have to initialize the Spring Context
+     * as well as the needed services on your own!
      */
     protected HelloWorldSpeechlet() {
     }

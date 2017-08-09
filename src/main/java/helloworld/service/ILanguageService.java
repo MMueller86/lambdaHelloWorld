@@ -3,6 +3,8 @@ package helloworld.service;
 import helloworld.constants.SupportedLanguagesEnum;
 
 /**
+ * Service-Interface of the UI. All Hello World and language functionality are
+ * encapsulated by this Interface.
  * Created by mimo on 26.04.2017.
  */
 public interface ILanguageService {

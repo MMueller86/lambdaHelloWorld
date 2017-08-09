@@ -6,6 +6,8 @@ import java.util.MissingResourceException;
 import java.util.ResourceBundle;
 
 /**
+ * Util to handle the 'speech' resource Bundle.
+ *
  * Created by mimo on 24.04.2017.
  */
 public class ResourceBundleParamUtil {
